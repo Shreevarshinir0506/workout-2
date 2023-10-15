@@ -1,0 +1,122 @@
+System.out.println("Enter the Sentence:");
+        String str=scan.nextLine();
+        String[] arr=str.split("[\\s,]");
+        for(String s:arr)
+        {
+            count++;
+        }
+        System.out.println("Number of Words in Java: "+count);
+    }
+}
+
+//32.No.of.Words Ends with Given Character
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int count=0;
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter the Sentence:");
+        String str=scan.nextLine();
+        System.out.println("Enter the Letter to be Check:");
+        char ch=scan.next().charAt(0);
+        String[] arr=str.split("[^a-zA-Z]");
+        for(String s:arr)
+        {
+           System.out.println(s);
+           char c[]=s.toCharArray();
+           if(c[c.length-1]==ch)
+           {
+               count++;
+           }
+        }
+        System.out.println("No.of.Words Ends with "+ch+": "+(count));
+    }
+}
+
+//33.Replace the Word in a Sentence with given word
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int count=0;
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter the Sentence:");
+        String str=scan.nextLine();
+        System.out.println("Enter the Word to be replaced:");
+        String old=scan.next();
+        System.out.println("Enter the Word to be replace:");
+        String newstr=scan.next();
+        str=str.replace(old,newstr);
+        System.out.println("Sentence After Replaced:");
+        System.out.println(str);
+    }
+}
+
+//34.Deleting the Word
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int count=0;
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter the Sentence:");
+        String str=scan.nextLine();
+        System.out.println("Enter the Word:");
+        String old=scan.next();
+        str=str.replace(old,"").replaceAll("\\s+"," ");
+        System.out.println("After Deleting the Word: "+str);
+    }
+}
+        
+//35.Change the Case of the Word
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int count=0;
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter the Sentence:");
+        String str=scan.nextLine();
+        System.out.println("Enter the Word:");
+        String old=scan.next();
+        if(old.equals(old.toLowerCase()))
+        {
+            str=str.replace(old,old.toUpperCase());
+        }
+        else
+        {
+            str=str.replace(old,old.toLowerCase());
+        }
+        System.out.println("After Conversion: "+str);
+    }
+}
+        
+//36.Swap the first and last Character in a word in Sentence
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int count=0;
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter the Sentence:");
+        String str=scan.nextLine();
+        String[] arr=str.split("[^a-zA-Z]");
+        String fin="";
+        for(String s:arr)
+        {
+            char ch[]=s.toCharArray();
+            char temp=ch[0];
+            ch[0]=ch[s.length()-1];
+            ch[s.length()-1]=temp;
+            String res=new String(ch);
+            fin=fin+" "+res;
+        }
+        System.out.println("Modified String:"+fin);
+    }
+}
